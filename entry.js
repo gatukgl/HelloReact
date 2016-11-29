@@ -1,16 +1,33 @@
-import './style.css';
+import './style.css'
 
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 
-class HelloReact extends React.Component {
+const contacts = [
+    { name: 'Gatuk', email: 'gatuk@pronto.com' },
+    { name: 'Man', email: 'man@pronto.com' }
+]
+
+const GetContact = contact => (
+    <div>
+        <h2>Name: {contact.name}</h2>
+        <div>Email: {contact.email}</div>
+    </div>
+)
+
+class Layout extends React.Component {
     render() {
         return (
-            <div id='helloReact'>
-                Hello from React!
+            <div id='Layout'>
+            Hello from layout
+            { 
+                contacts.map(c =>
+                    <GetContact {...c} />
+                )
+            }
             </div>
         )
     }
 }
 
-render(<HelloReact />, document.getElementById('main-app'));
+render(<Layout />, document.getElementById('main-app'));
