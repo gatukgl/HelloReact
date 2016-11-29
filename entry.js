@@ -19,7 +19,6 @@ class Layout extends React.Component {
     render() {
         return (
             <div id='Layout'>
-            Hello from layout
             { 
                 contacts.map(c =>
                     <GetContact {...c} />
